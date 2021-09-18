@@ -56,6 +56,7 @@
 - UP signal is activated if the falling edge of the reference signal is obtained before the falling edge of the output signal and it stays active until the falling edge of the output signal is received.
 - This can be depicted in the state machine format as follows:
 
+![state machine format](https://user-images.githubusercontent.com/89193562/133884845-c386f913-15fd-43ed-beeb-6ef34873ab3e.JPG)
 
 - A good way to detect falling or rising edge is by usng a flip flop
 - Implementing the circuit with flip flops:
