@@ -29,7 +29,7 @@
     - [Part 17: Steps to combine layouts]()
     - [Part 18: Tapeout theory]()
     - [Part 19: Tapeout labs]()
-- [References]()
+- [References](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#references)
 
 # Day 1: PLL Theory and Lab setup
 
