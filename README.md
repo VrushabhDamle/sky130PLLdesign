@@ -97,6 +97,8 @@
 - If the current is high, then the output can be charged faster.
 - By 'starving' the ring oscillator of current, we can control its frequency.
 
+![1631965316467](https://user-images.githubusercontent.com/89193562/133887593-d39916a3-d885-45d2-95c1-2de570153db5.jpg)
+
 - Frequency divider:
     - The output of a toggle flip flop is half the frequency of the input signal.
 
