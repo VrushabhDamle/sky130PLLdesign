@@ -109,7 +109,7 @@
 - Development Flow:
 
 <p align="center">
-  <img width="260" height="766" src="D:\sky130 PLL design\DAY 1\development flow.JPG">
+  <img width="260" height="766" src="https://drive.google.com/file/d/1FCJHye2GQT-EjoLN7yNpYaxvphqn5tM9/view?usp=sharing">
 </p>
     
 - It is often the case that after each simulation phase, we would need to make several changes to the circuit to bring it closer to the required specifications.
