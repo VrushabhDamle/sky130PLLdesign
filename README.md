@@ -268,5 +268,7 @@ plot v(6) v(Clk)+2
 - In the `.control` command the `tran 0.1ns 0.2us` tells the simulator to do a transient analysis with a given sampling rate (here 0.1ns) for a given amount of time (here 0.2us). The `plot v(6) v(Clk)+2` tells it what signals to plot.
 - The control block ends with the `.endc` and the spice file ends with `.end`.
 
+## Part 10: PLL components circuit simulations
+
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
