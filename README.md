@@ -18,7 +18,7 @@
     - [Part 7: Circuit design simulation tool - Ngspice Setup](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-7-circuit-design-simulation-tool---ngspice-setup)
     - [Part 8: Layout design tool - Magic Setup](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-8-layout-design-tool---magic-setup)
 - [Day 2: PLL Labs and post-layout simulations]()
-    - [Part 9: PLL components circuit design]()
+    - [Part 9: PLL components circuit design](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-9-pll-components-circuit-design)
     - [Part 10: PLL components circuit simulations]()
     - [Part 11: Steps to combine PLL sub-circuits and PLL full design simulation]()
     - [Part 12: Troubleshooting steps]()
