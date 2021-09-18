@@ -190,3 +190,9 @@
 - The first step is to clone the magic repository (given in [Part 5](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-5-tool-setup-and-design-flow))
 - Now we have to install the dependancies which can be found at the [Install](http://opencircuitdesign.com/magic/) page
 - Now go into the magic folder using the "cd" command and compile magic using `./configur` command.
+- Run the configure, make and install commands on the terminal.
+- Search open pdks on google and select the [RTimothy/open_pdks](https://github.com/RTimothyEdwards/open_pdks)
+- Clone this repository and compile it or download [sky130A.tech](https://drive.google.com/file/d/18BG4zzpRrcHP0UoBcNLA3sWFDVdNlUtp/view) and place it in the main folder.
+
+
+- This is the end of the tasks of the first day.
