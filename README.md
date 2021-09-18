@@ -30,10 +30,12 @@
 - Voltage Controlled Oscillator can be implemented on chip easily with inverters and the frequency can be controlled with an input voltage. However, they tend to have noise or fluctuations in their phase.
 - The purpose of PLL is to make the spectrum of a Voltage Controlled Oscillator pure while still maintaining the flexibility.
 
+![spectrum](https://user-images.githubusercontent.com/89193562/133884534-62ab83dc-2814-4f99-a6b4-f3f00d475868.png)
 
 - Phase-Locked Loop Intuition:
     - To mimic the reference means to have the same/a multiple of the reference frequency and a constant phase difference with it.
 
+![pll components](https://user-images.githubusercontent.com/89193562/133884254-93e75da1-ff2c-4571-9fcd-d5e26db7a92d.JPG)
 
 - Components of a basic PLL are:
     - **VCO (Voltage Controlled Oscillator)**: It is the on-chip oscillator.
