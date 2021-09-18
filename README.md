@@ -85,9 +85,57 @@
 
 ## Part 4: Introduction to Voltage Controlled Oscillator and Frequency Divider
 
+- Ring Oscillator:
+    - It is a sries combination of odd number of inverters which has a certain delay. This causes the output signal to flip after a certain delay.
+    - Output period = 2 \* delay(inverter) \* inverter_count
+- The frequency depends on delay and delay depends on the current supplied.
+- If the current is high, then the output can be charged faster.
+- By 'starving' the ring oscillator of current, we can control its frequency.
+
+- Frequency divider:
+    - The output of a toggle flip flop is half the frequency of the input signal.
+
+- Some Terms:
+    - Lock Range: It is the range of frequencies for which the PLL is able to maintain a lock given that it is already in a locked state.
+    - Capture Range: It is the range of frequencies for which the PLL is is able to attain a locked stated from an unlocked stated.
+    - Settling Time: It is the time within which the PLL is able to attain a lock from an unlocked state.
+
 ## Part 5: Tool Setup and Design Flow
 
+- Best to build any software tool from its source code, as it will be the latest version.
+- Tools used:
+    - Ngspice: It is used for the transistor level circuit simulation
+    - Magic: It is used for layout design and parasitic extraction
+- Development Flow:
+- It is often the case that after each simulation phase, we would need to make several changes to the circuit to bring it closer to the required specifications.
+
 ## Part 6: Introduction to PDK, specifications and pre-layout circuits
+
+- The PDK (Process Design Kit) Content:
+    - io: input\-output
+    - pr: primitives (spice)
+    - sc: standard cell
+    - hd: high density
+    - hs: high speed
+    - lp: low power
+    - hdll: high density low leakage
+- PDK is provided by the fabrication centres because thats where the transistors get fabricated.
+- The characteristics of those transistors in the technology node of interest are available to us through the scripts.
+- Other than transistor characteristics, a lot of information is available to help the design process.
+- The specifications give the operationg condition at which the PLL has to operate.
+- It is based on these specifications, that we will design the circuit.
+- We will use the simplified IP specifications from VSD for our PLL design:
+    - Corner \- TT
+    - Supply \- 1.8V
+    - Room Temperature
+    - VCO mode and PLL mode
+    - Input Fmin = 5MHz and Fmax = 12.5MHz
+    - Multiplier \- 8x
+    - Jitter (RMS) <~ 20ns
+    - Duty Cycle \- 50%
+- The first three specifications together are called as PVT corner or Process\-Voltage\-Temperature corner
+- Pre\-layout:
+    - This phase is all about development and the transistor level simulation of the circuits.
 
 ## Part 7: Circuit design simulation tool - Ngspice Setup
 
