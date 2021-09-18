@@ -232,13 +232,13 @@ On the first day of the workshop, basic theory of the PLL was taught. The multip
 ```
 *Frequency Divider Circuit
 
-.include pll_workshop/sky130.lib
+.include sky130nm.lib
 
-XM1 3 2 1 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
-XM2 3 2 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+xm1 1 2 3 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm2 0 2 3 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
 
-XM3 3 4 5 1 sky130_fd_pr__pfet_01v8 l=150n w=420n
-XM4 3 6 5 0 sky130_fd_pr__nfet_01v8 l=150n w=840n
+xm3 3 Clkb 4 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm4 3 Clk 4 0 sky130_fd_pr__nfet_01v8 l=150n w=840n 
 
 xm7 1 4 5 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
 xm8 0 4 5 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
