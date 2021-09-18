@@ -4,6 +4,17 @@
 
 ## Brief Description of the Workshop
 
+# *Index*
+- [Day 1: PLL Theory and Lab setup]()
+    - [Part 1: Introduction to PLL]()
+    - [Part 2: Introduction to Phase Frequency Detector]()
+    - [Part 3: Introduction to Charge Pump]()
+    - [Part 4: Introduction to Voltage Controlled Oscillator and Frequency Divider]()
+    - [Part 5:Tool Setup and Design Flow]()
+    - [Part 6: Introduction to PDK, specifications and pre-layout circuits]()
+    - [Part 7: Circuit design simulation tool - Ngspice Setup]()
+    - [Part 8: Layout design tool - Magic Setup]()
+
 # Day 1: PLL Theory and Lab setup
 
 ## Part 1: Introduction to PLL
@@ -56,7 +67,7 @@
     - If the signals are very close, then we get an output which is clipped as there isn't enough time for it to rise.
     - A more precise PFD enables better stability for the PLL because it enables minute adjustments of the phase and frequency.
 
-## Introduction to Charge Pump
+## Part 3: Introduction to Charge Pump
 
 - The role of a CP in PLL is to convert the difference in phase or frequency which is measured digitally into an analog signal that can be used to control the VCO.
 - It can be done by using current steering circuits. A current steering circuit steers the current or it directs the current flow from the Vdd to the output or from the output to the ground based on the up or down signal that is provided.
@@ -69,3 +80,12 @@
 - The averaging is still not as smooth as required. There are still fluctuations caused according to the rise and fall of the up and down signals. We can tackle this by replacing the output capacitor with a low pass filter.
 - This smoothens out any high frequency fluctuations in the output. LPF has a very significant role in stabilizing the PLL. Without the load filter, the PLL cannot lock and mimic the reference signal.
 
+## Part 4: Introduction to Voltage Controlled Oscillator and Frequency Divider
+
+## Part 5:Tool Setup and Design Flow
+
+## Part 6: Introduction to PDK, specifications and pre-layout circuits
+
+## Part 7: Circuit design simulation tool - Ngspice Setup
+
+## Part 8: Layout design tool - Magic Setup
