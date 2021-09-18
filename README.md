@@ -93,6 +93,9 @@ On the first day of the workshop, basic theory of the PLL was taught. The multip
 - It can be done by using current steering circuits. A current steering circuit steers the current or it directs the current flow from the Vdd to the output or from the output to the ground based on the up or down signal that is provided.
 - If up signal is active, the current flows from the Vdd to the output capacitor and charges the output. This increases the voltage at the CP output.
 - If down signal is active, the current flows from the output capacitor to the ground and discharges the output. This decreases the voltage at the CP output.
+
+![1631981380586](https://user-images.githubusercontent.com/89193562/133895268-b1609619-8ca9-49ac-9345-d2996d100cd1.jpg)
+
 - The reluctance of the capacitor to change voltage quickly, smoothens or averages the voltage change at the output so when the average active time of the up signal is higher than the down signal, the output voltage rises.
 - Similarly, when average active time of down signal is higher than the up signal, the output voltage falls.
 - Increasing the voltage speeds up the VCO while reduction involtage slows it down.
