@@ -36,3 +36,36 @@
 - XOR operation doesn't distinguish between which signal is leading and lagging.
 - The ability to distinguish between lagging and leading signal is essential for designing a PLL.
 - This can be achieved by using two signals \- Up and Down signals
+- Down signal is activated if the falling edge of the output signal is obtained before the falling edge of the reference signal and it stays active until the falling edge of the reference signal is received.
+- UP signal is activated if the falling edge of the reference signal is obtained before the falling edge of the output signal and it stays active until the falling edge of the output signal is received.
+- This can be depicted in the state machine format as follows:
+
+
+- A good way to detect falling or rising edge is by usng a flip flop
+- Implementing the circuit with flip flops:
+    - The negative edge flip flops are used here. In this case, it is known that if the clock input falls, the flip flop output will go high. This indicates the falling edge.
+    - Two flip flops are required because of the need to detect the falling edge of two different signals in different scenarios.
+    - Now, from the state diagram, the falling edge of the reference signal arrives and then the falling edge of the output signal arrives. Both up and down signals should now become low. To get this, an additional AND gate is required.
+
+
+
+
+- This is one of the boost phase detector circuits.
+- There is and issue with the circuit \- **Dead Zone**:
+    - Dead Zone prevents us from improving the smallest difference in phase or frequency that the PFD is able to measure.
+    - If the signals are very close, then we get an output which is clipped as there isn't enough time for it to rise.
+    - A more precise PFD enables better stability for the PLL because it enables minute adjustments of the phase and frequency.
+
+## Introduction to Charge Pump
+
+- The role of a CP in PLL is to convert the difference in phase or frequency which is measured digitally into an analog signal that can be used to control the VCO.
+- It can be done by using current steering circuits. A current steering circuit steers the current or it directs the current flow from the Vdd to the output or from the output to the ground based on the up or down signal that is provided.
+- If up signal is active, the current flows from the Vdd to the output capacitor and charges the output. This increases the voltage at the CP output.
+- If down signal is active, the current flows from the output capacitor to the ground and discharges the output. This decreases the voltage at the CP output.
+- The reluctance of the capacitor to change voltage quickly, smoothens or averages the voltage change at the output so when the average active time of the up signal is higher than the down signal, the output voltage rises.
+- Similarly, when average active time of down signal is higher than the up signal, the output voltage falls.
+- Increasing the voltage speeds up the VCO while reduction involtage slows it down.
+- When the up and down transistors are off, there is still a small current flowing through them in the form of leakage current. This leakage current has a bad impact on output control voltage because it keeps charging the output capacitor even when there is no up or down signal.
+- The averaging is still not as smooth as required. There are still fluctuations caused according to the rise and fall of the up and down signals. We can tackle this by replacing the output capacitor with a low pass filter.
+- This smoothens out any high frequency fluctuations in the output. LPF has a very significant role in stabilizing the PLL. Without the load filter, the PLL cannot lock and mimic the reference signal.
+
