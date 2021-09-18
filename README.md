@@ -195,4 +195,4 @@
 - Clone this repository and compile it or download [sky130A.tech](https://drive.google.com/file/d/18BG4zzpRrcHP0UoBcNLA3sWFDVdNlUtp/view) and place it in the main folder.
 
 
-- This is the end of the tasks of the first day.
+- **_This is the end of the tasks of the first day._**
