@@ -109,6 +109,19 @@
 - Tools used:
     - Ngspice: It is used for the transistor level circuit simulation
     - Magic: It is used for layout design and parasitic extraction
+- In order to install Ngspice, type the following command in the terminal:
+
+    `sudo apt-get install ngspice`
+    
+- In order to install Magic, follow the given steps:
+    - `sudo apt-get update && sudo apt-get upgrade` This step is used to update the OS.
+    - `git clone git://opencircuitdesign.com/magic` This step clones the Magic Repository
+    - `sudo apt-get install csh` This step installs the csh shell
+    - `cd magic` This step is to go into the cloned directory
+    - `./configure` This step runs the configure script
+    - `make` This step runs the make command to compile
+    - `sudo make install` This step installs magic on the device
+
 - Development Flow:
 
 <p align="center">
