@@ -167,7 +167,7 @@
 
 ## Part 7: Circuit design simulation tool - Ngspice Setup
 
-- The first step is to install ngspice using ubuntu's package manager. The command to do so is given above (in Part 5).
+- The first step is to install ngspice using ubuntu's package manager. The command to do so is given above (in [Part 5](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-5-tool-setup-and-design-flow)).
 - Next, we have to clone the google skywater pdk. On the terminal type `git clone https://github.com/google/skywater-pdk-libs-sky130_fd_pr.git`
 - Now we have to pick the files that we need from "skywater-pdk-libs-sky130_fd_pr" folder
 - Go to the cells folder and search nfet and in nfet folder search "nfet_01v8". Again, search "tt" and chose the file named "sky130_fd_pr__nfet_01v8__tt_leak.pm3.spice". Copy this file to the directory that will be used for PLL simulations.
@@ -186,3 +186,7 @@
 ![terminal-spice](https://user-images.githubusercontent.com/89193562/133888623-02cf8522-57d9-4f1e-be3f-3017d04f0862.JPG)
 
 ## Part 8: Layout design tool - Magic Setup
+
+- The first step is to clone the magic repository (given in [Part 5](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-5-tool-setup-and-design-flow))
+- Now we have to install the dependancies which can be found at the [Install](http://opencircuitdesign.com/magic/) page
+- Now go into the magic folder using the "cd" command and compile magic using `./configur` command.
