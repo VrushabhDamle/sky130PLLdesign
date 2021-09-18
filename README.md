@@ -102,6 +102,8 @@
 - Frequency divider:
     - The output of a toggle flip flop is half the frequency of the input signal.
 
+![1631965618195](https://user-images.githubusercontent.com/89193562/133887698-ba75fc39-f9f9-456b-bcda-4cd514d360d0.jpg)
+
 - Some Terms:
     - Lock Range: It is the range of frequencies for which the PLL is able to maintain a lock given that it is already in a locked state.
     - Capture Range: It is the range of frequencies for which the PLL is is able to attain a locked stated from an unlocked stated.
@@ -161,6 +163,7 @@
 - The first three specifications together are called as PVT corner or Process\-Voltage\-Temperature corner
 - Pre\-layout:
     - This phase is all about development and the transistor level simulation of the circuits.
+    - In this phase all the circuits are developed in such a way that most of the disadvantages are already overcome.
 
 ## Part 7: Circuit design simulation tool - Ngspice Setup
 
