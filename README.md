@@ -183,6 +183,10 @@ On the first day of the workshop, basic theory of the PLL was taught. The multip
     - This phase is all about development and the transistor level simulation of the circuits.
     - In this phase all the circuits are developed in such a way that most of the disadvantages are already overcome.
 
+![2021-09-18 (6)](https://user-images.githubusercontent.com/89193562/133895941-df57a532-dffc-4c5a-ab12-869127bd6e44.png)
+
+**Photos taken from the workshop slides**
+
 ## Part 7: Circuit design simulation tool - Ngspice Setup
 
 - The first step is to install ngspice using ubuntu's package manager. The command to do so is given above (in [Part 5](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-5-tool-setup-and-design-flow)).
