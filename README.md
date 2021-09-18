@@ -227,6 +227,46 @@ On the first day of the workshop, basic theory of the PLL was taught. The multip
 
 - Now open the file using the file browser.
 - The first line is always given as a comment and we gave the circuit name as the comment.
+- Write the following code in the file:
+
+```
+*Frequency Divider Circuit
+
+.include pll_workshop/sky130.lib
+
+XM1 3 2 1 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+XM2 3 2 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+XM3 3 4 5 1 sky130_fd_pr__pfet_01v8 l=150n w=420n
+XM4 3 6 5 0 sky130_fd_pr__nfet_01v8 l=150n w=840n
+
+xm7 1 4 5 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm8 0 4 5 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm9 5 Clk 6 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm10 5 Clkb 6 0 sky130_fd_pr__nfet_01v8 l=150n w=640n 
+
+xm11 1 6 2 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm12 0 6 2 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm13 1 Clk Clkb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm14 0 Clk Clkb 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+v1 1 0 1.8
+v2 Clk 0 PULSE 0 1.8 1n 6p 6p 5ns 10ns
+
+c1 6 0 10f
+.control
+tran 0.1ns 0.2us
+plot v(6) v(Clk)+2
+.endc
+
+.end
+```
+
+- In the command `v2 Clk 0 PULSE 0 1.8 1n 6p 6p 5ns 10ns` the numeric values are placed in the sequence that represents: voltage1, voltage2, delay, rise time, fall time, pulse width, period.
+- In the `.control` command the `tran 0.1ns 0.2us` tells the simulator to do a transient analysis with a given sampling rate (here 0.1ns) for a given amount of time (here 0.2us). The `plot v(6) v(Clk)+2` tells it what signals to plot.
+- The control block ends with the `.endc` and the spice file ends with `.end`.
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
