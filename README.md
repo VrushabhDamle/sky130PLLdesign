@@ -29,6 +29,7 @@
     - [Part 17: Steps to combine layouts]()
     - [Part 18: Tapeout theory]()
     - [Part 19: Tapeout labs]()
+- [References]()
 
 # Day 1: PLL Theory and Lab setup
 
@@ -204,3 +205,8 @@
 
 
 - **_This is the end of the tasks of the first day._**
+
+# Day 2: PLL Labs and post-layout simulations
+
+# References
+- [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
