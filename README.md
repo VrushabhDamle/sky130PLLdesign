@@ -33,6 +33,8 @@
 
 # Day 1: PLL Theory and Lab setup
 
+On the first day of the workshop, basic theory of the PLL was taught. The multiple components that the PLL constitutes were discussed in depth and their MOSFET based circuits were seen. The tools that were to be installed were \- Ngspice and Magic. The steps for the installations were told and a walkthrough video was presented if any difficulties were faced. The MOSFET based circuits that were taken were chosen such that they were up-to-date with the latest advancements and minimal disadvantages.
+
 ## Part 1: Introduction to PLL
 
 - To get a precise clock signal without frequency or phase noise and at the same time it has the flexibility of running at a frequency of our choice.
