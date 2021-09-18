@@ -17,7 +17,7 @@
     - [Part 6: Introduction to PDK, specifications and pre-layout circuits](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-6-introduction-to-pdk-specifications-and-pre-layout-circuits)
     - [Part 7: Circuit design simulation tool - Ngspice Setup](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-7-circuit-design-simulation-tool---ngspice-setup)
     - [Part 8: Layout design tool - Magic Setup](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-8-layout-design-tool---magic-setup)
-- [Day 2: PLL Labs and post-layout simulations]()
+- [Day 2: PLL Labs and post-layout simulations](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#day-2-pll-labs-and-post-layout-simulations)
     - [Part 9: PLL components circuit design](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-9-pll-components-circuit-design)
     - [Part 10: PLL components circuit simulations]()
     - [Part 11: Steps to combine PLL sub-circuits and PLL full design simulation]()
