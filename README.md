@@ -107,6 +107,9 @@
     - Ngspice: It is used for the transistor level circuit simulation
     - Magic: It is used for layout design and parasitic extraction
 - Development Flow:
+
+![development flow](https://user-images.githubusercontent.com/89193562/133883659-d5f7c26a-5f27-43b0-8a2a-54ca9b2b32b7.JPG)
+
 - It is often the case that after each simulation phase, we would need to make several changes to the circuit to bring it closer to the required specifications.
 
 ## Part 6: Introduction to PDK, specifications and pre-layout circuits
