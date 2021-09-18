@@ -109,7 +109,7 @@
 - Development Flow:
 
 <p align="center">
-  <img width="260" height="766" src="https://drive.google.com/file/d/1FCJHye2GQT-EjoLN7yNpYaxvphqn5tM9/view?usp=sharing">
+  <img width="260" height="766" src="https://user-images.githubusercontent.com/89193562/133883982-1d7b74f8-f8fe-493b-8482-2b6473352f5f.JPG">
 </p>
     
 - It is often the case that after each simulation phase, we would need to make several changes to the circuit to bring it closer to the required specifications.
