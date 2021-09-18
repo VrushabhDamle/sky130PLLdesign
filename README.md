@@ -30,7 +30,7 @@
 - Voltage Controlled Oscillator can be implemented on chip easily with inverters and the frequency can be controlled with an input voltage. However, they tend to have noise or fluctuations in their phase.
 - The purpose of PLL is to make the spectrum of a Voltage Controlled Oscillator pure while still maintaining the flexibility.
 
-![spectrum](https://user-images.githubusercontent.com/89193562/133884534-62ab83dc-2814-4f99-a6b4-f3f00d475868.png)
+![1631964401892](https://user-images.githubusercontent.com/89193562/133887230-40ec071e-a279-4a23-b217-e9e209d9008d.jpg)
 
 - Phase-Locked Loop Intuition:
     - To mimic the reference means to have the same/a multiple of the reference frequency and a constant phase difference with it.
@@ -64,8 +64,7 @@
     - Two flip flops are required because of the need to detect the falling edge of two different signals in different scenarios.
     - Now, from the state diagram, the falling edge of the reference signal arrives and then the falling edge of the output signal arrives. Both up and down signals should now become low. To get this, an additional AND gate is required.
 
-
-
+![1631964589994](https://user-images.githubusercontent.com/89193562/133887300-de6788fd-7008-4bda-b21f-5858471ed784.jpg)
 
 - This is one of the boost phase detector circuits.
 - There is and issue with the circuit \- **Dead Zone**:
@@ -82,6 +81,9 @@
 - The reluctance of the capacitor to change voltage quickly, smoothens or averages the voltage change at the output so when the average active time of the up signal is higher than the down signal, the output voltage rises.
 - Similarly, when average active time of down signal is higher than the up signal, the output voltage falls.
 - Increasing the voltage speeds up the VCO while reduction involtage slows it down.
+
+![1631964721166](https://user-images.githubusercontent.com/89193562/133887355-2c951e28-c412-4be2-a6f9-5c89e568ad53.jpg)
+
 - When the up and down transistors are off, there is still a small current flowing through them in the form of leakage current. This leakage current has a bad impact on output control voltage because it keeps charging the output capacitor even when there is no up or down signal.
 - The averaging is still not as smooth as required. There are still fluctuations caused according to the rise and fall of the up and down signals. We can tackle this by replacing the output capacitor with a low pass filter.
 - This smoothens out any high frequency fluctuations in the output. LPF has a very significant role in stabilizing the PLL. Without the load filter, the PLL cannot lock and mimic the reference signal.
