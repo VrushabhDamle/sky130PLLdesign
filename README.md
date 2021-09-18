@@ -167,4 +167,22 @@
 
 ## Part 7: Circuit design simulation tool - Ngspice Setup
 
+- The first step is to install ngspice using ubuntu's package manager. The command to do so is given above (in Part 5).
+- Next, we have to clone the google skywater pdk. On the terminal type `git clone https://github.com/google/skywater-pdk-libs-sky130_fd_pr.git`
+- Now we have to pick the files that we need from "skywater-pdk-libs-sky130_fd_pr" folder
+- Go to the cells folder and search nfet and in nfet folder search "nfet_01v8". Again, search "tt" and chose the file named "sky130_fd_pr__nfet_01v8__tt_leak.pm3.spice". Copy this file to the directory that will be used for PLL simulations.
+- Go to the cells folder and search pfet and in nfet folder search "pfet_01v8". Again, search "tt" and chose the file named "sky130_fd_pr__pfet_01v8__tt_leak.pm3.spice". Copy this file to the directory that will be used for PLL simulations.
+- Go to models and then go to parameters and copy the files "invariant.spice" and "lod.spice" to the directory that will be used for PLL simulations.
+- Now in terminal go to the directory that will be used for PLL simulations.
+- In the terminal type the command `nano sky130.lib`.
+- Now, include all the files that were just copied.
+- Save this file using ctrl+s and then exit using ctrl+x.
+- The output should look as follows:
+
+![spice lab](https://user-images.githubusercontent.com/89193562/133888591-9b74cff1-7dab-4c95-a342-98465b9c7222.JPG)
+
+- The terminal window should look like:
+
+![terminal-spice](https://user-images.githubusercontent.com/89193562/133888623-02cf8522-57d9-4f1e-be3f-3017d04f0862.JPG)
+
 ## Part 8: Layout design tool - Magic Setup
