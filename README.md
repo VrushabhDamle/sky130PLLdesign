@@ -13,7 +13,7 @@
     - [Part 2: Introduction to Phase Frequency Detector]()
     - [Part 3: Introduction to Charge Pump]()
     - [Part 4: Introduction to Voltage Controlled Oscillator and Frequency Divider]()
-    - [Part 5:Tool Setup and Design Flow]()
+    - [Part 5: Tool Setup and Design Flow]()
     - [Part 6: Introduction to PDK, specifications and pre-layout circuits]()
     - [Part 7: Circuit design simulation tool - Ngspice Setup]()
     - [Part 8: Layout design tool - Magic Setup]()
@@ -85,7 +85,7 @@
 
 ## Part 4: Introduction to Voltage Controlled Oscillator and Frequency Divider
 
-## Part 5:Tool Setup and Design Flow
+## Part 5: Tool Setup and Design Flow
 
 ## Part 6: Introduction to PDK, specifications and pre-layout circuits
 
