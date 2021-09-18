@@ -5,18 +5,18 @@
 ## Brief Description of the Workshop
 
 # *INDEX*
-- [Phase-Locked Loop(PLL) IC design on Open-Source Google-Skywater 130nm Workshop](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#phase-locked-looppll-ic-design-on-open-source-google-skywater-130nm-workshop)
-    - [Brief Description of the Workshop](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#brief-description-of-the-workshop)
-- [INDEX](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#index)
-- [Day 1: PLL Theory and Lab setup](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#day-1-pll-theory-and-lab-setup)
-    - [Part 1: Introduction to PLL](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#part-1-introduction-to-pll)
-    - [Part 2: Introduction to Phase Frequency Detector](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#part-2-introduction-to-phase-frequency-detector)
-    - [Part 3: Introduction to Charge Pump](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#part-3-introduction-to-charge-pump)
-    - [Part 4: Introduction to Voltage Controlled Oscillator and Frequency Divider](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#part-4-introduction-to-voltage-controlled-oscillator-and-frequency-divider)
-    - [Part 5: Tool Setup and Design Flow](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#part-5-tool-setup-and-design-flow)
-    - [Part 6: Introduction to PDK, specifications and pre-layout circuits](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#part-6-introduction-to-pdk-specifications-and-pre-layout-circuits)
-    - [Part 7: Circuit design simulation tool - Ngspice Setup](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#part-7-circuit-design-simulation-tool---ngspice-setup)
-    - [Part 8: Layout design tool - Magic Setup](https://github.com/VrushabhDamle/sky130PLLdesign/blob/main/README.md#part-8-layout-design-tool---magic-setup)
+- [Phase-Locked Loop(PLL) IC design on Open-Source Google-Skywater 130nm Workshop](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#phase-locked-looppll-ic-design-on-open-source-google-skywater-130nm-workshop)
+    - [Brief Description of the Workshop](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#brief-description-of-the-workshop)
+- [INDEX](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#index)
+- [Day 1: PLL Theory and Lab setup](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#day-1-pll-theory-and-lab-setup)
+    - [Part 1: Introduction to PLL](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-1-introduction-to-pll)
+    - [Part 2: Introduction to Phase Frequency Detector](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-2-introduction-to-phase-frequency-detector)
+    - [Part 3: Introduction to Charge Pump](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-3-introduction-to-charge-pump)
+    - [Part 4: Introduction to Voltage Controlled Oscillator and Frequency Divider](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-4-introduction-to-voltage-controlled-oscillator-and-frequency-divider)
+    - [Part 5: Tool Setup and Design Flow](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-5-tool-setup-and-design-flow)
+    - [Part 6: Introduction to PDK, specifications and pre-layout circuits](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-6-introduction-to-pdk-specifications-and-pre-layout-circuits)
+    - [Part 7: Circuit design simulation tool - Ngspice Setup](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-7-circuit-design-simulation-tool---ngspice-setup)
+    - [Part 8: Layout design tool - Magic Setup](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-8-layout-design-tool---magic-setup)
 
 # Day 1: PLL Theory and Lab setup
 
