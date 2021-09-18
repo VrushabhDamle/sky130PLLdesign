@@ -181,10 +181,6 @@
 
 ![spice lab](https://user-images.githubusercontent.com/89193562/133888591-9b74cff1-7dab-4c95-a342-98465b9c7222.JPG)
 
-- The terminal window should look like:
-
-![terminal-spice](https://user-images.githubusercontent.com/89193562/133888623-02cf8522-57d9-4f1e-be3f-3017d04f0862.JPG)
-
 ## Part 8: Layout design tool - Magic Setup
 
 - The first step is to clone the magic repository (given in [Part 5](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-5-tool-setup-and-design-flow))
