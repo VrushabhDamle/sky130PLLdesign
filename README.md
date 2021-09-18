@@ -217,5 +217,16 @@ On the first day of the workshop, basic theory of the PLL was taught. The multip
 
 # Day 2: PLL Labs and post-layout simulations
 
+## Part 9: PLL components circuit design
+
+- We created a circuit description ngspice and we did it for the frequency divider circuit.
+- A spice file is just a text file with a `.spice` or `.cir` extension.
+- To make the file type the following command in the terminal \- `touch FreqDiv.cir`.
+
+![touch_freqDiv](https://user-images.githubusercontent.com/89193562/133896191-6a450561-988b-4509-8450-10ad7a85ec73.JPG)
+
+- Now open the file using the file browser.
+- The first line is always given as a comment and we gave the circuit name as the comment.
+
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
