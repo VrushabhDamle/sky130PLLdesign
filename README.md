@@ -511,7 +511,229 @@ plot v(clk2)+4 v(clk1)+4 v(up)+2 v(down)
 
 - We can see how the circuit is able to detect the slight difference in the phase.
 
+**For the mcq on charge pump**
+
+- In the file "ChargePump.cir" find the tran instruction.
+- Change the tran instruction from `tran 1ns 1us` to `tran 1ns 20us`
+- In order to simulate the `ChargePump.cir` file that we have created, first we must enter the directory where the file is saved using the "cd" command.
+- To simulate the file type the command `ngspice ChargePump.cir`
+
+![ngspice_chargePump](https://user-images.githubusercontent.com/89193562/133915939-1498b997-c967-4a5e-8b22-30a1b57132db.JPG)
+
+- The output is:
+
+![tran_chargePump_20us](https://user-images.githubusercontent.com/89193562/133915963-e9584062-91d9-4cad-a270-903c5cd5f72d.JPG)
+
+- From the above snap shot the capacitor is charged upto a voltage of 800uV when the simulation is run for 20us.
+
 ## Part 11: Steps to combine PLL sub-circuits and PLL full design simulation
+
+- We need to make a PLL. For this we combine the circuits that we have observed so far in a single file using the subcircuit block in spice.
+- The combined file is:
+
+```
+*PLL
+.include sky130nm.lib
+
+xx1 Clk_Ref Clk_Out_by_8 up down pd
+xx2 up down VCtrl cp
+
+*Loop Filter
+r1 VCtrl rc1 490
+c1 rc1 0 355f
+r2 rc1 rc2 490
+c2 rc2 0 350f
+r3 rc2 rc3 490
+c3 rc3 0 345f
+
+xx3 rc3 Clk_Out vco
+
+xx4 Clk_Out Clk_Out_by_2 fd
+xx5 Clk_Out_by_2 Clk_Out_by_4 fd
+xx6 Clk_Out_by_4 Clk_Out_by_8 fd
+
+v1 Clk_Ref 0 PULSE 0 1.8 0 6ps 6ps 40ns 80ns
+
+.ic v(VCtrl) = 0
+.ic v(Clk_Out_by_2) = 0
+.ic v(Clk_Out_by_4) = 1.8
+.ic v(Clk_Out_by_8) = 0
+.control
+tran 0.1ns 180us
+plot v(Clk_Ref) v(Clk_Out_by_8) v(Clk_Out_by_4)+2 v(Clk_Out_by_2)+4 v(Clk_Out)+6 v(up)+8 v(down)+10 v(VCtrl)+12
+.endc
+
+*PFD
+.subckt pd Clk1 Clk2 up down 
+xm1 1 clk1 3 1 sky130_fd_pr__pfet_01v8 l=150n w=640n 
+xm2 3 clk1 4 0 sky130_fd_pr__nfet_01v8 l=150n w=1800n
+xm3 4 clk2 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+xm4 1 clk2 6 1 sky130_fd_pr__pfet_01v8 l=150n w=640n 
+xm5 6 clk2 7 0 sky130_fd_pr__nfet_01v8 l=150n w=1800n
+xm6 7 clk1 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+xm7 8 clk1 3 0 sky130_fd_pr__nfet_01v8 l=150n w=2400n 
+xm8 clk1 clk1 8 1 sky130_fd_pr__pfet_01v8 l=150n w=640n
+
+xm11 upb 8 1 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+xm12 upb 8 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+xm15 up upb 1 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+xm16 up upb 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+  
+xm9 9 clk2 6 0 sky130_fd_pr__nfet_01v8 l=150n w=2400n
+xm10 clk2 clk2 9 1 sky130_fd_pr__pfet_01v8 l=150n w=640n
+
+xm13 downb 9 1 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+xm14 downb 9 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+xm17 down downb 1 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+xm18 down downb 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+
+*output cap
+*c1 up 0 6f
+*c2 down 0 6f
+
+v1 1 0 1.8
+.ends pd
+
+
+*CP
+.subckt cp up down out
+xm43 3 2 1 1 sky130_fd_pr__pfet_01v8 l=150n w=18u 
+xm44 out downb 3 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm31 out up 7 0 sky130_fd_pr__nfet_01v8 l=150n w=420n
+xm32 7 8 0 0 sky130_fd_pr__nfet_01v8 l=150n w=4.8u
+
+xm33 2 2 1 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm34 8 8 0 0 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm35 9 down 3 1 sky130_fd_pr__pfet_01v8 l=150n w=5400n 
+xm36 9 9 0 0 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm37 10 10 1 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm38 10 upb 7 0 sky130_fd_pr__nfet_01v8 l=150n w=5400n
+
+xm39 1 down downb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm40 0 down downb 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm41 1 up upb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm42 0 up upb 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+*r1 out rc 200
+*c1 rc 0 8f
+
+v1 1 0 1.8
+.ends cp
+
+
+*VCO
+.subckt vco in 17
+xm1 10 16 3 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm2 3 16 9 9  sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm3 10 3 4 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm4 4 3 9 9 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm5 10 4 12 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm6 12 4 9 9 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm11 10 12 13 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm12 13 12 9 9 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm13 10 13 14 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm14 14 13 9 9 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm15 10 14 15 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm16 15 14 9 9 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm17 10 15 16 10 sky130_fd_pr__pfet_01v8 l=150n w=2400n
+xm18 16 15 9 9 sky130_fd_pr__nfet_01v8 l=150n w=1200n
+
+xm7 10 5 1 1 sky130_fd_pr__pfet_01v8 l=150n w=1080n
+xm8 5 5 1 1 sky130_fd_pr__pfet_01v8 l=150n w=840n
+xm9 5 in 0 0 sky130_fd_pr__nfet_01v8 l=150n w=840n
+xm10 9 in 0 0 sky130_fd_pr__nfet_01v8 l=150n w=1080n
+
+xm19 1 16 11 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+xm20 11 16 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+xm21 1 11 17 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+xm22 17 11 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+*c1 11 0 24f
+v1 1 0 1.8
+.ends vco
+
+
+*FD
+.subckt fd Clk 10
+
+xm1 1 2 3 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm2 0 2 3 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm3 3 Clkb 4 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm4 3 Clk 4 0 sky130_fd_pr__nfet_01v8 l=150n w=840n 
+
+xm7 1 4 5 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm8 0 4 5 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm9 5 Clk 6 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm10 5 Clkb 6 0 sky130_fd_pr__nfet_01v8 l=150n w=640n 
+
+xm11 1 6 2 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm12 0 6 2 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm13 1 Clk Clkb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm14 0 Clk Clkb 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm15 7 6 1 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm16 7 6 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+xm19 1 7 10 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+xm20 10 7 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+
+*c1 7 0 18f
+v1 1 0 1.8
+.ends fd
+```
+
+- If we notice the CP circuit, it is just pasted in the sub-circuit block and it ends with a `.ends cp` statement.
+- The subcircuit for CP is defined as `.subckt cp up down out`. It is basically giving a name to the block and then specifying the input-output pins.
+- To instantiate a sub-circuit, we use "xx" which means that it is a sub-circuit of general type.
+- In instantiation, we mention the sub-circuit name last while during the definition, sub-circuit name is given first and then the pin names are given.
+- Similar to the way we instantiated the CP sub-circuit, we have instantiated all circuits and added the loop filter as well.
+- We have kept V1 voltage pulse as input reference signal and the period of this signal is "80ns" meaning that it is a 12.5MHz signal.
+- Proper naming of the nets and proper assignment of the values for each parameter like width, length, etc. is important as one wrong naming will cause an error in the spice simulation.
+- Now we will simulate the combined pll file using the "ngspice" command as shown below:
+
+![ngspice_pll_combined](https://user-images.githubusercontent.com/89193562/133916522-e82dc472-ce7c-441a-866a-9aa31f63243b.JPG)
+
+- The output that we receive is:
+
+
+- The very first row is the CP output which is the control voltage that goes to the VCO is displayed.
+- Right below it are the up and down signals.
+- Then come the output signals and the signals divided by 2 and by 4.
+- Finally and most importantly, come the last two signals which are the reference signal in red and the signal divided by 8 in blue. These signals are overlapping.
+
+- Let's zoom into an area by right clicking and dragging the cursor:
+
+
+- Here we can see how the up and down signals are coming into play and we see the frequency division happening across the fourth, fifth, and the sixth rows.
+- The charge pump output seems constant but actually, it is fluctuating very slightly based on the up and down signals.
+- Most importantly, if we zoom in at the bottom, we can the the difference between the reference signal in red and the output frequency divided by 8 signal as shown below:
+
+
+- This difference in output signal divided by 8 and the reference signal is the phase noise of this PLL that we created.
+- If the PLL becomes perfect, which is an ideal case, then the blue feedback signal will overlap the red reference signal perfectly which is what we wish for.
+- If we take the root-mean-square (RMS) of the variation of the output signal, we get the Jitter (RMS) value which denotes the phase noise.
+- It is important to note that this blue signal is in-fact created by the VCO.
+
+## Part 12: Troubleshooting steps
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
