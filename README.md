@@ -37,6 +37,7 @@
     - [Part 18: Tapeout theory](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-18-tapeout-theory)
     - [Part 19: Tapeout labs](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-19-tapeout-labs)
 - [References](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#references)
+- [Conclusion and Opinion]()
 
 # Day 1: PLL Theory and Lab setup
 
@@ -1024,6 +1025,8 @@ Two things that we need to do once we reach till here:
 - Reference clock input pin and output clock pin are also digital and so we connect them to the digital input-output pins.
 - VCO direct input pin is control voltage pin of analog nature. So, we need to connect it to an analog input-output pin.
 - Considering this scenarion, we place our design at the top-right corner and make the connections to the pins using wire tool and contact layers.
+
+# Conclusion and Opinion
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
