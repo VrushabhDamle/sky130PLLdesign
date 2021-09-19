@@ -28,7 +28,7 @@
     - [Part 12: Troubleshooting steps](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-12-troubleshooting-steps)
     - [Part 13: Layout design](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-13-layout-design)
     - [Part 14: Layout Walkthrough](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-14-layout-walkthrough)
-        - [For the mcq on box function]()
+        - [For the mcq on box function](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#for-the-mcq-on-box-function)
     - [Part 15: Parasitic Extraction]()
     - [Part 16: Post Layout simulations]()
     - [Part 17: Steps to combine layouts]()
