@@ -982,7 +982,46 @@ Two things that we need to do once we reach till here:
 
 ## Part 18: Tapeout theory
 
+- Tapeout means to send our final design to the Fab, after preparing it.
+- Preparing the requires adding the following to the chip:
+    - Input-Output Pads
+    - Peripherals
+    - Memory
+    - Testing Mechanisms
+    - Others
+
+**Caravel:**
+- The input-output pads, processor, memory, peripherals and the other most important things that one wants to support his design with are available on the SoC.
+
+![2021-09-19 (2)](https://user-images.githubusercontent.com/89193562/133928499-3599f22b-6959-4a4c-9dd9-c055a9dd4e88.png)
+
+- The user project area we see is the area available to us to place our design.
+- In a way the this SoC acts as a vehicle that carries our design and hence the name 'Caravel'.
+- This is the IC that finally gets fabricated with our design inside it.
+- During the first shuttle the process was to place and design inside the user project area and then meet the connections form the design ports to the user project area pins and then merge that user project area into the Caravel SoC.
+- This time around they say that the designer only needs to bother about placing their design in the user project area and need not have to bother about integrating it to the SoC.
+
 ## Part 19: Tapeout labs
+
+- Download the layout file for the analog user project area.
+- Once downloaded, extract it to the directory of your choice.
+- Now, open it with magic and the technology file sky130A.tech
+- Place the design in the user project area and make the connections with the pins.
+- It is important to not that one must not move any of the pins that they have given from their location. We only use the pins that we need and connect our design to them.
+- At the bottom of the user project area are the wishful ports.
+- Along the left of the user project area are the input-output ports and some power ports like Vdd and Vss.
+- Along the right of the user project area are a few more input-output ports and power ports like Vccd, Vssd, Vcca and Vssa.
+- At the top of the user project area are the analog input-output pins.
+
+- In our design, we have five pins:
+    - Enable pins for CP and VCO.
+    - Reference clock input pin.
+    - Output clock pin.
+    - VCO direct input pin.
+- The enable pins are connected to the digital input-output pins.
+- Reference clock input pin and output clock pin are also digital and so we connect them to the digital input-output pins.
+- VCO direct input pin is control voltage pin of analog nature. So, we need to connect it to an analog input-output pin.
+- Considering this scenarion, we place our design at the top-right corner and make the connections to the pins using wire tool and contact layers.
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
