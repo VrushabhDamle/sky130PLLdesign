@@ -20,7 +20,7 @@
 - [Day 2: PLL Labs and post-layout simulations](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#day-2-pll-labs-and-post-layout-simulations)
     - [Part 9: PLL components circuit design](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-9-pll-components-circuit-design)
     - [Part 10: PLL components circuit simulations](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-10-pll-components-circuit-simulations)
-    - [Part 11: Steps to combine PLL sub-circuits and PLL full design simulation]()
+    - [Part 11: Steps to combine PLL sub-circuits and PLL full design simulation](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-11-steps-to-combine-pll-sub-circuits-and-pll-full-design-simulation)
     - [Part 12: Troubleshooting steps]()
     - [Part 13: Layout design]()
     - [Part 14: Layout Walkthrough]()
