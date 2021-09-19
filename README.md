@@ -1540,4 +1540,7 @@ The workshop was very helpful to me because I was able to explore the concepts o
 - [https://drive.google.com/file/d/18BG4zzpRrcHP0UoBcNLA3sWFDVdNlUtp/view](https://drive.google.com/file/d/18BG4zzpRrcHP0UoBcNLA3sWFDVdNlUtp/view)
 - [https://github.com/google/skywater-pdk-libs-sky130_fd_pr.git](https://github.com/google/skywater-pdk-libs-sky130_fd_pr.git)
 - [https://github.com/efabless/caravel-lite/blob/cda6c3ca1158b495f002bf90860941c3a9af1784/gds/user_analog_project_wrapper_empty.gds.gz](https://github.com/efabless/caravel-lite/blob/cda6c3ca1158b495f002bf90860941c3a9af1784/gds/user_analog_project_wrapper_empty.gds.gz)
-
+- [https://www.vsdiat.com/](https://www.vsdiat.com/)
+- [https://www.vlsisystemdesign.com/](https://www.vlsisystemdesign.com/)
+- [https://github.com/kunalg123/vsdflow](https://github.com/kunalg123/vsdflow)
+- [https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
