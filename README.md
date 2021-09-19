@@ -865,9 +865,9 @@ xx1 Ref_Clk Up Down Clk2 GND VCC PFD
 
 v1 VDD GND 1.8v
 
-v2 Ref_Clk GND PULSE 0 1.8v 0 6p 6p 40p 80p
+v2 Ref_Clk GND PULSE 0 1.8v 0 6p 6p 40n 80n
 
-v3 Clk2 GND PULSE 0 1.8v 10n 6p 6p 40p 80p
+v3 Clk2 GND PULSE 0 1.8v 10n 6p 6p 40n 80n
 
 .control 
 tran 0.1n 5u
@@ -879,12 +879,12 @@ plot v(Up) v(Down)+2 v(Ref_Clk)+4 v(Clk2)+6
 
 - In the terminal, it looks like:
 
-![pfd_postlay_cir_file](https://user-images.githubusercontent.com/89193562/133925460-cdeac2de-0f11-48f5-84a7-6d223b2f5551.JPG)
+![pfd_postlay_cir_file](https://user-images.githubusercontent.com/89193562/133925641-a2b8458f-95c1-4017-aff8-4df1927090b3.JPG)
 
 - Now save this file using the ctrl+S command and exit it using the ctrl+X command.
 - Run this file using ngspice as shown:
 
-![pfd_postlay_cir_simulation_command](https://user-images.githubusercontent.com/89193562/133925484-6db13482-b5a0-4cf5-8990-88664c184ca3.JPG)
+![pfd_postlay_cir_tran](https://user-images.githubusercontent.com/89193562/133925640-cb21aa30-8310-469f-9961-095db3576a47.JPG)
 
 
 # References
