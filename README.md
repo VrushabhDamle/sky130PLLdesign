@@ -32,6 +32,7 @@
     - [Part 15: Parasitic Extraction](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-15-parasitic-extraction)
         - [For the mcq on parasitics extraction](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#for-the-mcq-on-parasitics-extraction)
     - [Part 16: Post Layout simulations](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-16-post-layout-simulations)
+        - [For the mcq on post layout simulation]()
     - [Part 17: Steps to combine layouts]()
     - [Part 18: Tapeout theory]()
     - [Part 19: Tapeout labs]()
@@ -890,6 +891,65 @@ plot v(Up) v(Down)+2 v(Ref_Clk)+4 v(Clk2)+6
 
 ![pfd_postlay_cir_tran_zoom](https://user-images.githubusercontent.com/89193562/133925687-40a9db94-2957-42a7-8d8b-1cd0815d1c50.JPG)
 
+- Now we will simulate it for a phase difference between Ref_Clk and Clk2 to be 1ns.
+- To do so change the line from `v3 Clk2 GND PULSE 0 1.8v 10n 6p 6p 40n 80n` to `v3 Clk2 GND PULSE 0 1.8v 1n 6p 6p 40n 80n`
+- After doing this the file, opened in terminal should look like:
+
+![pfd_postlay_cir_file_small_phase](https://user-images.githubusercontent.com/89193562/133925774-081caa68-0d1e-4460-aae6-e0617b75015e.JPG)
+
+- The output now looks like:
+
+![pfd_postlay_cir_tran_small_phase](https://user-images.githubusercontent.com/89193562/133925830-478a30ac-39cf-4bc2-b5c7-a62f4f69347a.JPG)
+
+- The zoomed output looks like:
+
+![pfd_postlay_cir_tran_small_phase_zoom](https://user-images.githubusercontent.com/89193562/133925837-10454fcc-7176-4f51-83be-1f47da783b27.JPG)
+
+- So, the phase difference of even 1ns is detected.
+- This performance is possible because of the circuit that we have chosen for the PFD.
+- The default circuit that was discussed in the theory has the dead zone issue which doesn't allow the detection of such narrow phase differences.
+
+### For the mcq on post layout simulation
+
+- Create a new directory containing "sky130nm.lib" and "PFD.spice" in it.
+- Enter this directory through the terminal and type the command `nano PFD_postlay.cir`
+- Type the following code in it:
+
+```
+.include sky130nm.lib
+.include PFD.spice
+
+xx1 Ref_Clk Up Down Clk2 GND VCC PFD
+
+v1 VDD GND 1.8v
+
+v2 Ref_Clk GND PULSE 0 1.8v 0 6p 6p 40n 80n
+
+v3 Clk2 GND PULSE 0 1.8v 0.25n 6p 6p 40n 80n
+
+.control 
+tran 0.1n 5u
+plot v(Up) v(Down)+2 v(Ref_Clk)+4 v(Clk2)+6
+.endc
+
+.end
+```
+
+- In the terminal, it looks like:
+
+![pfd_postlay_mcq_file](https://user-images.githubusercontent.com/89193562/133926198-814e689e-c273-49e6-88ce-72e30de6dcfb.JPG)
+
+- The output that we receive looks like:
+
+![pfd_postlay_mcq_tran](https://user-images.githubusercontent.com/89193562/133926212-614acb31-7cb5-4bc4-96b0-1a1864ceaf05.JPG)
+
+- And the zoomed output looks like:
+
+![pfd_postlay_mcq_tran_zoom](https://user-images.githubusercontent.com/89193562/133926223-d65c2806-1bdd-4f7d-9fa5-3b093dfa31b8.JPG)
+
+- In this case the up signal is just a pulse because of the "Dead zone".
+
+## Part 17: Steps to combine layouts
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
