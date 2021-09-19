@@ -20,7 +20,7 @@
 - [Day 2: PLL Labs and post-layout simulations](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#day-2-pll-labs-and-post-layout-simulations)
     - [Part 9: PLL components circuit design](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-9-pll-components-circuit-design)
     - [Part 10: PLL components circuit simulations](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-10-pll-components-circuit-simulations)
-        - [Simulation File for Charge Pump]()
+        - [Simulation File for Charge Pump](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#simulation-file-for-charge-pump)
         - [Simulation File for VCO]()
         - [Simulation File for PFD]()
         - [For the mcq on charge pump]()
