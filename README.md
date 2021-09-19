@@ -33,7 +33,7 @@
         - [For the mcq on parasitics extraction](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#for-the-mcq-on-parasitics-extraction)
     - [Part 16: Post Layout simulations](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-16-post-layout-simulations)
         - [For the mcq on post layout simulation]()
-    - [Part 17: Steps to combine layouts]()
+    - [Part 17: Steps to combine layouts](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-17-steps-to-combine-layouts)
     - [Part 18: Tapeout theory]()
     - [Part 19: Tapeout labs]()
 - [References](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#references)
