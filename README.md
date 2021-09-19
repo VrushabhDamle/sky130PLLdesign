@@ -847,5 +847,45 @@ In order to do the parasitics extraction follow the steps given below:
 
 - Now open the "FD.spice" file that is created. We observe that there are capacitors from C0 to C42 so there are a total of 43 capacitors present and hence it is the answer.
 
+## Part 16: Post Layout simulations
+
+- First extract the spice file from the "PFD.mag" file (as done in [Part 15](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-15-parasitic-extraction))
+- Now using the terminal enter the directory where "sky130nm.lib" and "PFD.spice" are saved using the "cd" command.
+- Type the command `nano PFD_postlay.cir` in the terminal as shown:
+
+![pfd_postlay_cir](https://user-images.githubusercontent.com/89193562/133925440-d46c9af4-8bf0-4e93-a5e4-d47ec128b5a4.JPG)
+
+- In the file created type the code:
+
+```
+.include sky130nm.lib
+.include PFD.spice
+
+xx1 Ref_Clk Up Down Clk2 GND VCC PFD
+
+v1 VDD GND 1.8v
+
+v2 Ref_Clk GND PULSE 0 1.8v 0 6p 6p 40p 80p
+
+v3 Clk2 GND PULSE 0 1.8v 10n 6p 6p 40p 80p
+
+.control 
+tran 0.1n 5u
+plot v(Up) v(Down)+2 v(Ref_Clk)+4 v(Clk2)+6
+.endc
+
+.end
+```
+
+- In the terminal, it looks like:
+
+![pfd_postlay_cir_file](https://user-images.githubusercontent.com/89193562/133925460-cdeac2de-0f11-48f5-84a7-6d223b2f5551.JPG)
+
+- Now save this file using the ctrl+S command and exit it using the ctrl+X command.
+- Run this file using ngspice as shown:
+
+![pfd_postlay_cir_simulation_command](https://user-images.githubusercontent.com/89193562/133925484-6db13482-b5a0-4cf5-8990-88664c184ca3.JPG)
+
+
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
