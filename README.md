@@ -23,11 +23,12 @@
         - [Simulation File for Charge Pump](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#simulation-file-for-charge-pump)
         - [Simulation File for VCO](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#simulation-file-for-vco)
         - [Simulation File for PFD](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#simulation-file-for-pfd)
-        - [For the mcq on charge pump]()
+        - [For the mcq on charge pump](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#for-the-mcq-on-charge-pump)
     - [Part 11: Steps to combine PLL sub-circuits and PLL full design simulation](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-11-steps-to-combine-pll-sub-circuits-and-pll-full-design-simulation)
     - [Part 12: Troubleshooting steps](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-12-troubleshooting-steps)
     - [Part 13: Layout design](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-13-layout-design)
     - [Part 14: Layout Walkthrough]()
+        - [For the mcq on box function]()
     - [Part 15: Parasitic Extraction]()
     - [Part 16: Post Layout simulations]()
     - [Part 17: Steps to combine layouts]()
@@ -782,6 +783,40 @@ v1 1 0 1.8
 - To create a label, draw a line around the edge of the layer that we want to label. A line is drawn by making a box of zero thickness. Type the command `label name` in the magic command window. Name can be any name to be used as label.
 - To make a port, draw a box around the label and type `port make` in the magic command window.
 - We need to make ports because when we extract the parasitics from our design, the input and output ports will automatically have these names as we have labelled them as ports.
+
+## Part 14: Layout Walkthrough
+
+- We saw the previously designed magic files of the following circuits:
+    - Frequency Divider
+    - Phase Frequency Detector
+        - In the PFD design, on the right side, there are two similar drawings on the top and on the bottom.
+        - They are additional buffers that were kept for getting full swing.
+    - Charge Pump
+        - Top most long transistor is just for enabling or disabling the charge pump.
+        - Right below it is the upper current source. This much difference in the size of the transistor for the current source is to allow maximum current for the charging and discharging process.
+        - Two inverters on the left create the UPz and the DOWNz signals (UPz = up bar and DOWNz = down bar or their inverted variants).
+    - Voltage Controlled Oscillator
+        - There are seven inverters to reduce the range of frequencies that we are dealing with.
+        - Only the last inverter in the inverter is large to improve the driving strength of the oscillator.
+        - There is an additional inverter at the end and its purpose is to obtain a full swing for the output.
+        - At the top there is a small PMOS that acts as an enable or disable for the VCO.
+
+### For the mcq on box function
+
+- First copy the "FD.mag" file in the directory where the technology file "sky130A.tech" is placed.
+- Through the terminal enter the directory refered above using the "cd" command.
+- Type the command `magic -T sky130A.tech FD.mag` in the terminal.
+- Now the magic file should open and it should look like:
+
+![magic_output_fdmag](https://user-images.githubusercontent.com/89193562/133922745-602824ae-cddb-460b-b66a-0db4facf75a2.JPG)
+
+- Now select the entire are of the layout by using left-click and right-click.
+- On the magic command window type the command `box`
+- This should give an output as follows:
+
+![magic_command_window_fdmag](https://user-images.githubusercontent.com/89193562/133922786-26ced722-b1e3-482f-8485-1d964949eecc.JPG)
+
+- The area in sq. um is given as 29.82 and hence it is the answer.
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
