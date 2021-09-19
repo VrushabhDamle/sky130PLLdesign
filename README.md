@@ -498,6 +498,20 @@ plot v(clk2)+4 v(clk1)+4 v(up)+2 v(down)
 - In order to simulate the `PDF.cir` file that we have created, first we must enter the directory where the file is saved using the "cd" command.
 - To simulate the file type the command `ngspice PDF.cir`
 
+![ngspice_pfd](https://user-images.githubusercontent.com/89193562/133915847-17aef0c0-a7c6-4275-805c-7580a35606ae.JPG)
+
+- The output of the simulation looks like:
+
+![tran_pfd](https://user-images.githubusercontent.com/89193562/133915854-4539f216-9a41-49ef-a5dc-bc69953e11a2.JPG)
+
+- We can zoom the output to get a better view by right clicking and dragging it over the area that we wish to select.
+- This looks like:
+
+![tran_pfd_zoomed](https://user-images.githubusercontent.com/89193562/133915866-f9b0ee7f-8d49-458f-b265-092d9b550070.JPG)
+
+- We can see how the circuit is able to detect the slight difference in the phase.
+
+## Part 11: Steps to combine PLL sub-circuits and PLL full design simulation
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
