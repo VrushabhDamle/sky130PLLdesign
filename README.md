@@ -227,6 +227,8 @@ On the first day of the workshop, basic theory of the PLL was taught. The multip
 
 # Day 2: PLL Labs and post-layout simulations
 
+On the second day of the workshop, we did a lot of things. Firstly, we performed pre-layout simulations for all the components individually. Then we combined all the files and did a pre-layout spice simulation for the complete PLL. Then we were given a walkthrough of the layout of the PLL. We performed post-layout simulations for the components at this stage and then say the complete layout of the PLL. We created the GDS file for our layout and also saw the further steps required for the tapeout process.
+
 ## Part 9: PLL components circuit design
 
 - We created a circuit description ngspice and we did it for the frequency divider circuit.
