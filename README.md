@@ -1533,6 +1533,8 @@ Two things that we need to do once we reach till here:
 
 # Conclusion and Opinion
 
+The workshop was very helpful to me because I was able to explore the concepts of PLL to a great depth. My learning throughout the workshop was non-stop. I grasped the basics of PLL quite thoroughly which helped a lot in understanding the later part of the workshop. I was able to get hands on using experience with the open-source EDA tools which was really beneficial (the tools being magic and ngspice). The design flow was maintained throughout the workshop which helped me to get familiar with it. The simulations and layouts were tricky at the start but got easier as I explored the tools. Finally, this workshop cleared all my basic concepts of the PLL and the experience of getting a Silicon Proven Model ready was amazing.
+
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
 - [https://drive.google.com/file/d/18BG4zzpRrcHP0UoBcNLA3sWFDVdNlUtp/view](https://drive.google.com/file/d/18BG4zzpRrcHP0UoBcNLA3sWFDVdNlUtp/view)
