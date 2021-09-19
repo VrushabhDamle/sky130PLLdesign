@@ -886,6 +886,10 @@ plot v(Up) v(Down)+2 v(Ref_Clk)+4 v(Clk2)+6
 
 ![pfd_postlay_cir_tran](https://user-images.githubusercontent.com/89193562/133925640-cb21aa30-8310-469f-9961-095db3576a47.JPG)
 
+- The zoomed version of the output looks like:
+
+![pfd_postlay_cir_tran_zoom](https://user-images.githubusercontent.com/89193562/133925687-40a9db94-2957-42a7-8d8b-1cd0815d1c50.JPG)
+
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
