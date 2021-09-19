@@ -213,7 +213,7 @@ On the first day of the workshop, basic theory of the PLL was taught. The multip
 - Clone this repository and compile it or download [sky130A.tech](https://drive.google.com/file/d/18BG4zzpRrcHP0UoBcNLA3sWFDVdNlUtp/view) and place it in the main folder.
 
 
-- **_This is the end of the tasks of the first day._**
+- \*\***_This is the end of the tasks of the first day._**
 
 # Day 2: PLL Labs and post-layout simulations
 
@@ -269,6 +269,28 @@ plot v(6) v(Clk)+2
 - The control block ends with the `.endc` and the spice file ends with `.end`.
 
 ## Part 10: PLL components circuit simulations
+
+- In order to simulate the `FreqDiv.cir` file that we have created, first we must enter the directory where the file is saved using the "cd" command.
+- To simulate the file type the command `ngspice FreqDiv.cir`
+
+![ngspice_freqDiv](https://user-images.githubusercontent.com/89193562/133914842-a21da9d3-debb-47ce-9699-56807c7a5ad2.JPG)
+
+- The output that we receive is:
+
+![tran_freqDiv](https://user-images.githubusercontent.com/89193562/133914852-a12fc166-99da-4b45-ab75-5fee4def8111.JPG)
+
+- The signals that we wanted are plotted for the amount of time that we have mentioned in the "tran" instruction.
+- The frequency divider circuit is working because the output frequency is half of that of the input frequency.
+- Spice circuit is similarly created for other circuits and simulation is done for each circuit.
+
+**Simulation File for Charge Pump**
+
+- First enter the directory in which the `.cir` file is to be created.
+- Now type the command \- `touch ChargePump.cir`
+- Write the following code in the file:
+```
+
+```
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
