@@ -741,5 +741,14 @@ v1 1 0 1.8
 
 ## Part 12: Troubleshooting steps
 
+- Observe what kind of issue is faced.
+- Always debug individual components fully before moving to the combined simulation.
+- Check if any signals are coming flat or if the simulation is crashing. If this is the case then check if all the connections are done properly. Also check if there are any issues like wrong naming, capitalization issues or parameter value issues.
+- If the signals are right but the mimicking is not happening then verify the following:
+    - For what range of frequencies is the VCO working properly: Is our required output frequency range lying in the VCO's working range.
+    - Is the Phase Frequency Detector able to detect the differences: If the phase difference is very small, the PFD might not be able to detect it.
+    - Is the rate of Charge Pump output charging and discharging fast: Is it too fast or too slow? Is there too much fluctuations in charging or discharging? This means that the transistor sizing is the thing to pay attention to. Check the response of the CP when 0V is given as the input. If it is still charging then the charge leakage is the issue.
+    - Whether the loop filter values are working out: This can be found out using the thumb rules (in [Part 3](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-3-introduction-to-charge-pump)
+
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
