@@ -355,6 +355,15 @@ v2 up 0 0
 *PULSE 0 1.8 1n 6p 6p 100ns 200ns
 ```
 - Now change it to `v2 up 0 PULSE 0 1.8 1n 6p 6p 100ns 200ns`
+- In order to simulate the `ChargePump.cir` file that we have created, first we must enter the directory where the file is saved using the "cd" command.
+- To simulate the file type the command `ngspice ChargePump.cir`
+
+![ngspice_chargePump](https://user-images.githubusercontent.com/89193562/133915319-c20caefd-7922-41a9-9369-38ae8498f570.JPG)
+
+- This time the output is a little different and it looks like:
+
+![tran_chargePump_v2PULSE](https://user-images.githubusercontent.com/89193562/133915447-ba6ecdad-fb34-4972-80e0-5bb1e70427b1.JPG)
+
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
