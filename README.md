@@ -750,5 +750,34 @@ v1 1 0 1.8
     - Is the rate of Charge Pump output charging and discharging fast: Is it too fast or too slow? Is there too much fluctuations in charging or discharging? This means that the transistor sizing is the thing to pay attention to. Check the response of the CP when 0V is given as the input. If it is still charging then the charge leakage is the issue.
     - Whether the loop filter values are working out: This can be found out using the thumb rules (in [Part 3](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-3-introduction-to-charge-pump)
 
+## Part 13: Layout design
+
+- To open magic first enter the directory containing the "sky130A.tech" file using the "cd" commands.
+- Type `magic -T sky130A.tech` in the terminal window.
+- Two files should now open up as follows:
+
+![magic_view](https://user-images.githubusercontent.com/89193562/133918277-5ea0d518-950c-4d6a-bdfe-8c31a47d9344.JPG)
+![magic_command_window_view](https://user-images.githubusercontent.com/89193562/133918280-e9023432-a6af-41a0-b6fd-88327fe3ab7c.JPG)
+
+- The way to draw here in magic is first to make a box and then fill it with a material.
+- By left clicking, we fix the left bottom corner of the box.
+- By right clicking, we fix the right top corner of the box.
+- If we hover upon a layer (layers panel is present on the right hand side of the window), we can see the name of the layer on the top right corner of the screen.
+- By middle clicking on a layer, the box gets filled by the selected layer.
+- Materials needed for the transistors:
+    - P-diffusion for the PMOS and N-diffusion for the NMOS.
+    - For the gate, polysilicon layer is needed.
+- DRC error means that there is a size issue or a closeness issue. To know what exactly the issue is, select some part of the error region and press the "?" button on the keyboard and then the error will show up on the "magic command window".
+- Before creating a PMOS, we must create an N-Well region and then place the PMOS over it.
+- To copy a transistor, make a box around the transistor and press "A" button on the keyboard. Now, place the cursor where we wish to copy it and press "C" button. If we press the "M" button then it becomes the move operation.
+- For placing Vdd and ground, place the metal1 layer.
+- To connect two transistors, use the loacal interconnect layer (locali) like a wire.
+- To connect two layers, look for contact layers in the tray. They are represented with a cross symbol.
+- As long as we do not connect a contact, two different layers will not touch even if they overlap.
+- If we get a DRC error at this point it means that either the size of the contact is too small or the region of metal1 and local interconnect around the contact is not enough.
+- To create a label, draw a line around the edge of the layer that we want to label. A line is drawn by making a box of zero thickness. Type the command `label name` in the magic command window. Name can be any name to be used as label.
+- To make a port, draw a box around the label and type `port make` in the magic command window.
+- We need to make ports because when we extract the parasitics from our design, the input and output ports will automatically have these names as we have labelled them as ports.
+
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
