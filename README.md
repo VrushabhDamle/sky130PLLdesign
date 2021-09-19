@@ -354,15 +354,149 @@ plot v(out) C(out)
 v2 up 0 0
 *PULSE 0 1.8 1n 6p 6p 100ns 200ns
 ```
-- Now change it to `v2 up 0 PULSE 0 1.8 1n 6p 6p 100ns 200ns`
+- Now change it to `v2 up 0 PULSE 0 1.8 1n 6p 6p 100ns 200ns`. Also change the tran instruction from `tran 1ns 1us` to `tran 1ns 20us`.
+- This means that we are giving a pulse to the "up signal" and thus the graph should rise up.
 - In order to simulate the `ChargePump.cir` file that we have created, first we must enter the directory where the file is saved using the "cd" command.
 - To simulate the file type the command `ngspice ChargePump.cir`
 
 ![ngspice_chargePump](https://user-images.githubusercontent.com/89193562/133915319-c20caefd-7922-41a9-9369-38ae8498f570.JPG)
 
-- This time the output is a little different and it looks like:
+- This time the output is a little different as it should be and it looks like:
 
-![tran_chargePump_v2PULSE](https://user-images.githubusercontent.com/89193562/133915447-ba6ecdad-fb34-4972-80e0-5bb1e70427b1.JPG)
+![tran_chargePump_v2PULSE](https://user-images.githubusercontent.com/89193562/133915536-56892842-88e4-463f-9c7c-37e36f390aaa.JPG)
+
+
+**Simulation File for VCO**
+
+- Now, we will create a ".cir" file for a VCO.
+- First enter the directory in which the `.cir` file is to be created.
+- Now type the command \- `touch VCO.cir`
+- Write the following code in the file:
+
+```
+*Current starved 3 stage VCO
+.include sky130nm.lib
+
+xm1 10 16 3 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm2 3 16 9 9  sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm3 10 3 4 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm4 4 3 9 9 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm5 10 4 12 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm6 12 4 9 9 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm11 10 12 13 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm12 13 12 9 9 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm13 10 13 14 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm14 14 13 9 9 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm15 10 14 15 10 sky130_fd_pr__pfet_01v8 l=150n w=420n
+xm16 15 14 9 9 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm17 10 15 16 10 sky130_fd_pr__pfet_01v8 l=150n w=2400n
+xm18 16 15 9 9 sky130_fd_pr__nfet_01v8 l=150n w=1200n
+
+xm7 10 5 1 1 sky130_fd_pr__pfet_01v8 l=150n w=1080n
+xm8 5 5 1 1 sky130_fd_pr__pfet_01v8 l=150n w=840n
+xm9 5 in 0 0 sky130_fd_pr__nfet_01v8 l=150n w=840n
+xm10 9 in 0 0 sky130_fd_pr__nfet_01v8 l=150n w=1080n
+
+xm19 1 16 11 1 sky130_fd_pr__pfet_01v8 l=150n w=1080n
+xm20 11 16 0 0 sky130_fd_pr__nfet_01v8 l=150n w=540n
+
+*c1 11 0 10f
+v1 1 0 1.8
+v2 in 0 0.6
+
+
+.control
+tran 0.1ns 0.5us
+plot v(in) v(11)
+*setplot tran1
+*linearize v(14)
+*set specwindow=blackman
+*fft v(14)
+*dc v2 0 1.2 0.01
+*plot mag(v(14))
+.endc
+.end
+```
+
+- Here the input control signal is given by V2 source.
+- By adjusting this control voltage we can observe whether for a particular frequency range this VCO will be able to produce usable oscillations.
+- In order to simulate the `VCO.cir` file that we have created, first we must enter the directory where the file is saved using the "cd" command.
+- To simulate the file type the command `ngspice VCO.cir`
+
+![ngspice_vco](https://user-images.githubusercontent.com/89193562/133915670-8a77a6c0-896e-4d3d-af2a-97e20350cf9a.JPG)
+
+- The output that we receive is:
+
+![tran_vco](https://user-images.githubusercontent.com/89193562/133915673-2f72c731-eae9-4015-9bd2-47b329392967.JPG)
+
+- In the above image we are getting proper oscillations.
+- These oscillations are full swing because we have kept one extra inverter at the output.
+- Otherwise, these oscillations will be of lower and varying amplitude.
+
+**Simulation File for PFD**
+
+- Now, we will create a ".cir" file for a PFD.
+- First enter the directory in which the `.cir` file is to be created.
+- Now type the command \- `touch PFD.cir`
+- Write the following code in the file:
+
+```
+*PD_10T
+.include sky130nm.lib
+
+xm1 1 clk1 3 1 sky130_fd_pr__pfet_01v8 l=150n w=640n 
+xm2 3 clk1 4 0 sky130_fd_pr__nfet_01v8 l=150n w=1800n
+xm3 4 clk2 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+xm4 1 clk2 6 1 sky130_fd_pr__pfet_01v8 l=150n w=640n 
+xm5 6 clk2 7 0 sky130_fd_pr__nfet_01v8 l=150n w=1800n
+xm6 7 clk1 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+xm7 8 clk1 3 0 sky130_fd_pr__nfet_01v8 l=150n w=840n 
+xm8 clk1 clk1 8 1 sky130_fd_pr__pfet_01v8 l=150n w=640n
+
+xm11 upb 8 1 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+xm12 upb 8 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+xm15 up upb 1 1 sky130_fd_pr__pfet_01v8 l=150n w=960n
+xm16 up upb 0 0 sky130_fd_pr__nfet_01v8 l=150n w=480n
+  
+xm9 9 clk2 6 0 sky130_fd_pr__nfet_01v8 l=150n w=840n
+xm10 clk2 clk2 9 1 sky130_fd_pr__pfet_01v8 l=150n w=640n
+
+xm13 downb 9 1 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+xm14 downb 9 0 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+xm17 down downb 1 1 sky130_fd_pr__pfet_01v8 l=150n w=960n
+xm18 down downb 0 0 sky130_fd_pr__nfet_01v8 l=150n w=480n
+
+
+*output cap
+c1 up 0 3f
+c2 down 0 3f
+
+*sources
+v1 1 0 1.8v
+v2 clk1 0 pulse(0 1.8 0 6p 6p 5ns 10ns)
+v3 clk2 0 pulse(0 1.8 6ns 6p 6p 5ns 10ns) 
+
+*simulation
+.control
+tran 10ns 800ns 120ns
+plot v(clk2)+4 v(clk1)+4 v(up)+2 v(down)
+.endc
+.end
+```
+
+- Here v2 and v3 are given as the two input clock signals of phase difference 6ns.
+- In order to simulate the `PDF.cir` file that we have created, first we must enter the directory where the file is saved using the "cd" command.
+- To simulate the file type the command `ngspice PDF.cir`
 
 
 # References
