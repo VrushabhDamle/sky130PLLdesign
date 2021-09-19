@@ -30,7 +30,7 @@
     - [Part 14: Layout Walkthrough](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-14-layout-walkthrough)
         - [For the mcq on box function](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#for-the-mcq-on-box-function)
     - [Part 15: Parasitic Extraction]()
-        - [For the mcq on parasitics extraction]()
+        - [For the mcq on parasitics extraction](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#for-the-mcq-on-parasitics-extraction)
     - [Part 16: Post Layout simulations]()
     - [Part 17: Steps to combine layouts]()
     - [Part 18: Tapeout theory]()
