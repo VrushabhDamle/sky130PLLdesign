@@ -714,6 +714,7 @@ v1 1 0 1.8
 
 - The output that we receive is:
 
+![tran_pll](https://user-images.githubusercontent.com/89193562/133917203-915d78fb-8462-44f5-83a7-77d63bb18109.JPG)
 
 - The very first row is the CP output which is the control voltage that goes to the VCO is displayed.
 - Right below it are the up and down signals.
@@ -722,11 +723,13 @@ v1 1 0 1.8
 
 - Let's zoom into an area by right clicking and dragging the cursor:
 
+![tran_pll_zoom](https://user-images.githubusercontent.com/89193562/133917206-b0296225-8f8b-4f62-8167-4767bf3a550f.JPG)
 
 - Here we can see how the up and down signals are coming into play and we see the frequency division happening across the fourth, fifth, and the sixth rows.
 - The charge pump output seems constant but actually, it is fluctuating very slightly based on the up and down signals.
 - Most importantly, if we zoom in at the bottom, we can the the difference between the reference signal in red and the output frequency divided by 8 signal as shown below:
 
+![tran_pll_zoom_even_more](https://user-images.githubusercontent.com/89193562/133917209-ba4a9b3b-b137-4296-91b6-c32404c5485d.JPG)
 
 - This difference in output signal divided by 8 and the reference signal is the phase noise of this PLL that we created.
 - If the PLL becomes perfect, which is an ideal case, then the blue feedback signal will overlap the red reference signal perfectly which is what we wish for.
