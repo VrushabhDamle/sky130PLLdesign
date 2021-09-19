@@ -20,6 +20,10 @@
 - [Day 2: PLL Labs and post-layout simulations](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#day-2-pll-labs-and-post-layout-simulations)
     - [Part 9: PLL components circuit design](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-9-pll-components-circuit-design)
     - [Part 10: PLL components circuit simulations](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-10-pll-components-circuit-simulations)
+        - [Simulation File for Charge Pump]()
+        - [Simulation File for VCO]()
+        - [Simulation File for PFD]()
+        - [For the mcq on charge pump]()
     - [Part 11: Steps to combine PLL sub-circuits and PLL full design simulation](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-11-steps-to-combine-pll-sub-circuits-and-pll-full-design-simulation)
     - [Part 12: Troubleshooting steps](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-12-troubleshooting-steps)
     - [Part 13: Layout design](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-13-layout-design)
@@ -286,7 +290,7 @@ plot v(6) v(Clk)+2
 - The frequency divider circuit is working because the output frequency is half of that of the input frequency.
 - Spice circuit is similarly created for other circuits and simulation is done for each circuit.
 
-**Simulation File for Charge Pump**
+### **Simulation File for Charge Pump**
 
 - First enter the directory in which the `.cir` file is to be created.
 - Now type the command \- `touch ChargePump.cir`
@@ -369,7 +373,7 @@ v2 up 0 0
 ![tran_chargePump_v2PULSE](https://user-images.githubusercontent.com/89193562/133915536-56892842-88e4-463f-9c7c-37e36f390aaa.JPG)
 
 
-**Simulation File for VCO**
+### **Simulation File for VCO**
 
 - Now, we will create a ".cir" file for a VCO.
 - First enter the directory in which the `.cir` file is to be created.
@@ -442,7 +446,7 @@ plot v(in) v(11)
 - These oscillations are full swing because we have kept one extra inverter at the output.
 - Otherwise, these oscillations will be of lower and varying amplitude.
 
-**Simulation File for PFD**
+### **Simulation File for PFD**
 
 - Now, we will create a ".cir" file for a PFD.
 - First enter the directory in which the `.cir` file is to be created.
@@ -514,7 +518,7 @@ plot v(clk2)+4 v(clk1)+4 v(up)+2 v(down)
 
 - We can see how the circuit is able to detect the slight difference in the phase.
 
-**For the mcq on charge pump**
+### **For the mcq on charge pump**
 
 - In the file "ChargePump.cir" find the tran instruction.
 - Change the tran instruction from `tran 1ns 1us` to `tran 1ns 20us`
