@@ -30,6 +30,7 @@
     - [Part 14: Layout Walkthrough](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#part-14-layout-walkthrough)
         - [For the mcq on box function](https://github.com/VrushabhDamle/sky130PLLdesignWorkshop/blob/main/README.md#for-the-mcq-on-box-function)
     - [Part 15: Parasitic Extraction]()
+        - [For the mcq on parasitics extraction]()
     - [Part 16: Post Layout simulations]()
     - [Part 17: Steps to combine layouts]()
     - [Part 18: Tapeout theory]()
@@ -817,6 +818,34 @@ v1 1 0 1.8
 ![magic_command_window_fdmag](https://user-images.githubusercontent.com/89193562/133922786-26ced722-b1e3-482f-8485-1d964949eecc.JPG)
 
 - The area in sq. um is given as 29.82 and hence it is the answer.
+
+## Part 15: Parasitic Extraction
+
+In order to do the parasitics extraction follow the steps given below:
+- Open the magic file of the circuit that is to be extracted.
+- Press "I" button on the keyboard. It selects the whole design.
+- In the magic command window type `extract all`. This extracts the layout connectivity information into a ".ext" file.
+- Generally, if there are any warnings at this point, they would be because of wrong connections or short circuits or etc. But these are warnings and need not be errors.
+- Now, we need to convert the ".ext" file to a ".spice" file to use for simulations.
+- In the magic command window type `ext2spice cthresh 0 rthresh 0` and then type `ext2spice`.
+- Here the cthreshold 0 and rthreshold 0 setting is given to tell magic that if any amount of capacitive or resistive effect is present, then we want to extract it.
+- In the spice we find a `.option scale=10000u`. Every parameter in the spice file is multiplies by this scale.
+- For our case, since we know that the scaling factor is 10n so change the .option command from scale=10000u to scale=10n.
+
+### For the mcq on parasitics extraction
+
+- First copy the "FD.mag" file in the directory where the technology file "sky130A.tech" is placed.
+- Through the terminal enter the directory refered above using the "cd" command.
+- Type the command `magic -T sky130A.tech FD.mag` in the terminal.
+- Now the magic file should open. When it opens press the "I" button on the keyboard and then the design will look like:
+
+![magic_fdmag_parasitics](https://user-images.githubusercontent.com/89193562/133924023-74cc7432-1066-41e0-b6e6-682996e7f185.JPG)
+
+- Now in the magic command window, type the commands required to extract the parasitics as discussed above. The magic command window shall look like:
+
+![magic_command_window_fdmag_parasitics](https://user-images.githubusercontent.com/89193562/133924070-5769c25f-5d09-4b77-86e0-7afe1fa09724.JPG)
+
+- Now open the "FD.spice" file that is created. We observe that there are capacitors from C0 to C42 so there are a total of 43 capacitors present and hence it is the answer.
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
