@@ -105,6 +105,9 @@ On the first day of the workshop, basic theory of the PLL was taught. The multip
 - When the up and down transistors are off, there is still a small current flowing through them in the form of leakage current. This leakage current has a bad impact on output control voltage because it keeps charging the output capacitor even when there is no up or down signal.
 - The averaging is still not as smooth as required. There are still fluctuations caused according to the rise and fall of the up and down signals. We can tackle this by replacing the output capacitor with a low pass filter.
 - This smoothens out any high frequency fluctuations in the output. LPF has a very significant role in stabilizing the PLL. Without the load filter, the PLL cannot lock and mimic the reference signal.
+- There are two thumb rules that one should remember:
+    - Cx ~= C/10
+    - Loop filter band width ~= (Higher output frequency)/10
 
 ## Part 4: Introduction to Voltage Controlled Oscillator and Frequency Divider
 
