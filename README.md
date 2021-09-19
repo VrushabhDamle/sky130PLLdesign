@@ -956,6 +956,10 @@ plot v(Up) v(Down)+2 v(Ref_Clk)+4 v(Clk2)+6
 - Press the "I" button and then the "X" button on the keyboard to open the circuit or to make the circuit visible.
 - Now open all layouts in the same window.
 - Make quick connections using the wire tool. To access the wire tool press the space bar once and to exit the wire tool press the space bar three more times.
+- Once this is done the magic interface looks as follows:
+
+![magic_wire_connection](https://user-images.githubusercontent.com/89193562/133928204-1415170b-997d-45f7-b6fc-82da6d74b48e.JPG)
+
 - Extend the layers to make connections between the subcircuits.
 
 In the final PLL design:
@@ -971,6 +975,10 @@ Two things that we need to do once we reach till here:
     - The GDS file is the complete layout information that we can send to the fabricatoin centre to fabricate the IC.
     - To write GDS file, go to the file menu and choose the "Write GDS" option.
     - This gives us our final IC design in ".gds" format.
+
+- The final PLL layout looks as follows:
+
+![pll_final_design](https://user-images.githubusercontent.com/89193562/133928332-e8cb24a8-5604-447f-86ed-ced573cfb019.JPG)
 
 ## Part 18: Tapeout theory
 
