@@ -288,9 +288,73 @@ plot v(6) v(Clk)+2
 - First enter the directory in which the `.cir` file is to be created.
 - Now type the command \- `touch ChargePump.cir`
 - Write the following code in the file:
-```
 
 ```
+*ChargePump
+
+.include sky130nm.lib
+
+xm43 3 2 1 1 sky130_fd_pr__pfet_01v8 l=150n w=5.4u 
+xm44 out downb 3 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm31 out up 7 0 sky130_fd_pr__nfet_01v8 l=150n w=420n
+xm32 7 8 0 0 sky130_fd_pr__nfet_01v8 l=150n w=5.4u
+
+xm33 2 2 1 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm34 8 8 0 0 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm35 9 down 3 1 sky130_fd_pr__pfet_01v8 l=150n w=5400n 
+xm36 9 9 0 0 sky130_fd_pr__nfet_01v8 l=150n w=420n
+
+xm37 10 10 1 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm38 10 upb 7 0 sky130_fd_pr__nfet_01v8 l=150n w=5400n
+
+xm39 1 down downb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm40 0 down downb 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm41 1 up upb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm42 0 up upb 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+v1 1 0 1.8	
+v2 up 0 0
+*PULSE 0 1.8 1n 6p 6p 100ns 200ns
+v3 down 0 0
+
+r1 out rc 200
+c1 rc 0 64f
+c2 out 0 10f
+
+.ic v(out) = 0
+.ic c(out) = 0
+.control
+tran 1ns 1us
+plot v(out) C(out)
+*plot v(6) V(Clk)+2
+* v(D) v(Clk) v(6)
+.endc
+```
+
+- `.ic` command is used to specify the initial conditions of a signal.
+- Here it is done to specify the initial condition, before the charging or discharging that happens in the charge pump.
+- V2 voltage source is specified as the up signal with 0V and V3 voltage source is specified as the down signal with 0V.
+- This enables us to see if there is any leakage happening when no input is given.
+- In order to simulate the `ChargePump.cir` file that we have created, first we must enter the directory where the file is saved using the "cd" command.
+- To simulate the file type the command `ngspice ChargePump.cir`
+
+![ngspice_chargePump](https://user-images.githubusercontent.com/89193562/133915319-c20caefd-7922-41a9-9369-38ae8498f570.JPG)
+
+- The output looks like:
+
+![tran_chargePump](https://user-images.githubusercontent.com/89193562/133915324-df5bf808-636b-46a0-a3f5-478a7d17ee73.JPG)
+
+- We can see that current leakage is very small for this charge pump.
+- It is just around 40uV when simulated for 1us.
+- The slope indicates the charging happening when up and down signals are given 0V.
+- Now we will give an actual pulse signal and see the response.
+- To do so do, first look for V2 in the file "ChargePump.cir":
+```
+v2 up 0 0
+*PULSE 0 1.8 1n 6p 6p 100ns 200ns
+```
+- Now change it to `v2 up 0 PULSE 0 1.8 1n 6p 6p 100ns 200ns`
 
 # References
 - [https://github.com/lakshmi-sathi/avsdpll_1v8](https://github.com/lakshmi-sathi/avsdpll_1v8)
