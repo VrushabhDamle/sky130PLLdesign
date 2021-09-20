@@ -1545,3 +1545,4 @@ The workshop was very helpful to me because I was able to explore the concepts o
 - [https://github.com/kunalg123/vsdflow](https://github.com/kunalg123/vsdflow)
 - [https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [http://opencircuitdesign.com/magic/download.html](http://opencircuitdesign.com/magic/download.html)
+- [http://opencircuitdesign.com/magic/](http://opencircuitdesign.com/magic/)
